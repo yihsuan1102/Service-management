@@ -1,0 +1,28 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:17.0.3-ce.0
+    container_name: gitlab
+    hostname: gitlab.example.com
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://192.168.56.102:8000'
+    ports:
+      - "8000:8000"
+      - "22:22"
+    volumes:
+      - "/config:/etc/gitlab"
+      - "/logs:/var/log/gitlab"
+      - "/data:/var/opt/gitlab"
+    shm_size: '256m'
+    restart: always
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - "/home/dbse/docker/nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "/home/dbse/docker/certs/etc/letsencrypt:/etc/letsencrypt"
+      - "/home/dbse/docker/certs/lib/letsencrypt:/var/lib/letsencrypt"
+    ports:
+      - "443:443"
+    restart: always
