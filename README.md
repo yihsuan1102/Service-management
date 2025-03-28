@@ -1,3 +1,20 @@
+## Overview
+
+This guide outlines a comprehensive hands-on project designed to simulate real-world scenarios in deploying and managing containerized services across multiple Linux virtual machines. The project provides step-by-step instructions over several days, guiding participants through the setup, configuration, and orchestration of services such as GitLab, Mattermost, Nginx, and Portainer using Docker and Docker Swarm.
+
+Participants will gain practical experience in:
+
+- Installing and configuring Linux environments
+- Deploying services with Docker and Docker Compose
+- Managing containers with Portainer
+- Setting up reverse proxies and HTTPS using Nginx and Certbot
+- Automating deployments with Ansible
+- Implementing distributed storage using NFS
+- Scaling services and handling node failures in a Docker Swarm cluster
+- Using mDNS for hostname-based communication in local networks
+- Automating OS installation with Ubuntu’s autoinstall
+
+  
 ## Security Configuration
 Disable Linux security settings and firewalls, including `ufw`, `firewalld`, `selinux`, and `apparmor`.
 
